@@ -1,4 +1,4 @@
-import { IDrmProtocol, Env, DrmScheme, getLogger, PKDrmConfigObject } from '@playkit-js/playkit-js';
+import { IDrmProtocol, Env, DrmScheme, getLogger, PCDrmConfigObject } from '@playchi-js/playchi-js';
 
 const Widevine: IDrmProtocol = class Widevine {
   public static _logger = getLogger('Widevine');
@@ -6,10 +6,10 @@ const Widevine: IDrmProtocol = class Widevine {
   /**
    * Widevine is the configure key system.
    * @param {Array<Object>} drmData - The drm data.
-   * @param {PKDrmConfigObject} drmConfig - The drm config.
+   * @param {PCDrmConfigObject} drmConfig - The drm config.
    * @return {boolean} - Whether Widevine is the configure key system.
    */
-  public static isConfigured(drmData: Array<any>, drmConfig: PKDrmConfigObject): boolean {
+  public static isConfigured(drmData: Array<any>, drmConfig: PCDrmConfigObject): boolean {
     return DrmScheme.WIDEVINE === drmConfig.keySystem && !!drmData.find(drmEntry => drmEntry.scheme === drmConfig.keySystem);
   }
 

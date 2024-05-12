@@ -1,7 +1,7 @@
 import {AdaptationSet} from './parser/adaptation-set';
 import {Representation} from './parser/representation';
 import {UrlUtils} from './parser/parser-utils';
-import {ImageTrack, ThumbnailInfo} from '@playkit-js/playkit-js';
+import {ImageTrack, ThumbnailInfo} from '@playchi-js/playchi-js';
 import {EssentialProperty} from './parser/essential-property';
 
 class DashThumbnailController {

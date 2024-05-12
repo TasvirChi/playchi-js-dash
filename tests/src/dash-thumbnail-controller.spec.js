@@ -1,7 +1,7 @@
 import {DashManifestParser} from '../../src/parser/dash-manifest-parser';
 import {ImageAdaptationSetWithMultipleRepresentations, ImageAdaptationSetWithOneRepresentation} from './parser/manifests';
 import {DashThumbnailController} from '../../src/dash-thumbnail-controller';
-import {ImageTrack} from '@playkit-js/playkit-js';
+import {ImageTrack} from '@playchi-js/playchi-js';
 
 describe('DashThumbnailController', () => {
   let thumbnailController, manifestParser;

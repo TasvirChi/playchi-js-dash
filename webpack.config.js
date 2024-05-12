@@ -38,11 +38,11 @@ module.exports = (env, { mode }) => {
       extensions: ['.ts', '.js'],
     },
     output: {
-      filename: 'playkit-dash.js',
+      filename: 'playchi-dash.js',
       path: path.resolve(__dirname, 'dist'),
       library: {
         umdNamedDefine: true,
-        name: ['playkit', 'dash'],
+        name: ['playchi', 'dash'],
         type: 'umd',
       },
       clean: true
@@ -54,11 +54,11 @@ module.exports = (env, { mode }) => {
         amd: 'shaka-player',
         root: ['shaka']
       },
-      '@playkit-js/playkit-js': {
-        commonjs: '@playkit-js/playkit-js',
-        commonjs2: '@playkit-js/playkit-js',
-        amd: 'playkit-js',
-        root: ['playkit', 'core']
+      '@playchi-js/playchi-js': {
+        commonjs: '@playchi-js/playchi-js',
+        commonjs2: '@playchi-js/playchi-js',
+        amd: 'playchi-js',
+        root: ['playchi', 'core']
       },
     },
     devServer: {

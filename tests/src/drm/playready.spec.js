@@ -1,6 +1,6 @@
 import {PlayReady} from '../../../src/drm/playready';
 import {wwDrmData, prDrmData} from './fake-drm-data';
-import {DrmScheme} from '@playkit-js/playkit-js';
+import {DrmScheme} from '@playchi-js/playchi-js';
 
 describe('PlayReady', function () {
   describe('isConfigured', function () {

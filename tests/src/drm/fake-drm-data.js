@@ -1,4 +1,4 @@
-import {DrmScheme} from '@playkit-js/playkit-js';
+import {DrmScheme} from '@playchi-js/playchi-js';
 
 export const wwDrmData = [
   {

@@ -5,7 +5,7 @@ import {
   Error,
   EventType,
   RequestType,
-  TextTrack as PKTextTrack,
+  TextTrack as PCTextTrack,
   Track,
   TimedMetadata,
   createTextTrackCue,
@@ -13,9 +13,9 @@ import {
   VideoTrack,
   ImageTrack,
   ThumbnailInfo,
-  PKABRRestrictionObject,
-  filterTracksByRestriction, PKDrmDataObject, PKMediaSourceObject, IMediaSourceAdapter, FakeEvent, IDrmProtocol, PKResponseObject, PKRequestObject, PKDrmConfigObject
-} from '@playkit-js/playkit-js';
+  PCABRRestrictionObject,
+  filterTracksByRestriction, PCDrmDataObject, PCMediaSourceObject, IMediaSourceAdapter, FakeEvent, IDrmProtocol, PCResponseObject, PCRequestObject, PCDrmConfigObject
+} from '@playchi-js/playchi-js';
 import {Widevine} from './drm/widevine';
 import {PlayReady} from './drm/playready';
 import DefaultConfig from './default-config.json';
@@ -247,12 +247,12 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
    * Factory method to create media source adapter.
    * @function createAdapter
    * @param {HTMLVideoElement} videoElement - The video element that the media source adapter work with.
-   * @param {PKMediaSourceObject} source - The source Object.
+   * @param {PCMediaSourceObject} source - The source Object.
    * @param {Object} config - The player configuration.
    * @returns {IMediaSourceAdapter} - New instance of the run time media source adapter.
    * @static
    */
-  public static createAdapter(videoElement: HTMLVideoElement, source: PKMediaSourceObject, config: any): IMediaSourceAdapter {
+  public static createAdapter(videoElement: HTMLVideoElement, source: PCMediaSourceObject, config: any): IMediaSourceAdapter {
     const adapterConfig: any = Utils.Object.copyDeep(DefaultConfig);
     if (Utils.Object.hasPropertyPath(config, 'text.useNativeTextTrack')) {
       adapterConfig.textTrackVisibile = Utils.Object.getPropertyPath(config, 'text.useNativeTextTrack');
@@ -363,11 +363,11 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
   /**
    * Checks if dash adapter can play a given drm data.
    * @param {Array<Object>} drmData - The drm data to check.
-   * @param {PKDrmConfigObject} drmConfig - The drm config.
+   * @param {PCDrmConfigObject} drmConfig - The drm config.
    * @returns {boolean} - Whether the dash adapter can play a specific drm data.
    * @static
    */
-  public static canPlayDrm(drmData: Array<PKDrmDataObject>, drmConfig: PKDrmConfigObject): boolean {
+  public static canPlayDrm(drmData: Array<PCDrmDataObject>, drmConfig: PCDrmConfigObject): boolean {
     DashAdapter._availableDrmProtocol = [];
     for (const drmProtocol of DashAdapter._drmProtocols) {
       if (drmProtocol.isConfigured(drmData, drmConfig)) {
@@ -401,10 +401,10 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
   /**
    * @constructor
    * @param {HTMLVideoElement} videoElement - The video element which bind to the dash adapter
-   * @param {PKMediaSourceObject} source - The source object
+   * @param {PCMediaSourceObject} source - The source object
    * @param {Object} config - The media source adapter configuration
    */
-  constructor(videoElement: HTMLVideoElement, source: PKMediaSourceObject, config: any = {}) {
+  constructor(videoElement: HTMLVideoElement, source: PCMediaSourceObject, config: any = {}) {
     super(videoElement, source, config);
     DashAdapter._logger.debug('Creating adapter. Shaka version: ' + shaka.Player.version);
     this._config = Utils.Object.mergeDeep({}, DefaultConfig, this._config);
@@ -422,7 +422,7 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
     this._shaka = new shaka.Player();
     // This will force the player to use shaka UITextDisplayer plugin to render text tracks.
     if (this._config.useShakaTextTrackDisplay) {
-      this._shaka.setVideoContainer(Utils.Dom.getElementBySelector('.playkit-subtitles'));
+      this._shaka.setVideoContainer(Utils.Dom.getElementBySelector('.playchi-subtitles'));
     }
     this._maybeSetFilters();
     this._maybeSetDrmConfig();
@@ -501,14 +501,14 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
       DashAdapter._logger.debug('Register request filter');
       this._shaka.getNetworkingEngine()?.registerRequestFilter((type, request) => {
         if (Object.values(RequestType).includes(type)) {
-          const pkRequest: PKRequestObject = {url: request.uris[0], body: request.body, headers: request.headers};
+          const pcRequest: PCRequestObject = {url: request.uris[0], body: request.body, headers: request.headers};
           let requestFilterPromise;
           try {
-            requestFilterPromise = this._config.network.requestFilter(type, pkRequest);
+            requestFilterPromise = this._config.network.requestFilter(type, pcRequest);
           } catch (error) {
             requestFilterPromise = Promise.reject(error);
           }
-          requestFilterPromise = requestFilterPromise || Promise.resolve(pkRequest);
+          requestFilterPromise = requestFilterPromise || Promise.resolve(pcRequest);
           return requestFilterPromise
             .then(updatedRequest => {
               request.uris = [updatedRequest.url];
@@ -534,14 +534,14 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
       this._shaka.getNetworkingEngine()?.registerResponseFilter((type, response) => {
         if (Object.values(RequestType).includes(type)) {
           const {uri: url, data, headers} = response;
-          const pkResponse: PKResponseObject = {url, originalUrl: this._sourceObj!.url, data, headers};
+          const pcResponse: PCResponseObject = {url, originalUrl: this._sourceObj!.url, data, headers};
           let responseFilterPromise;
           try {
-            responseFilterPromise = this._config.network.responseFilter(type, pkResponse);
+            responseFilterPromise = this._config.network.responseFilter(type, pcResponse);
           } catch (error) {
             responseFilterPromise = Promise.reject(error);
           }
-          responseFilterPromise = responseFilterPromise || Promise.resolve(pkResponse);
+          responseFilterPromise = responseFilterPromise || Promise.resolve(pcResponse);
           return responseFilterPromise
             .then(updatedResponse => {
               response.data = updatedResponse.data;
@@ -614,10 +614,10 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
   /**
    * apply ABR restrictions by size
    * @private
-   * @param {PKABRRestrictionObject} restrictions - abr restrictions config
+   * @param {PCABRRestrictionObject} restrictions - abr restrictions config
    * @returns {void}
    */
-  private _updateRestriction(restrictions: PKABRRestrictionObject): void {
+  private _updateRestriction(restrictions: PCABRRestrictionObject): void {
     const shakaRestrictionsConfig = this._getRestrictionShakaConfig(restrictions);
     this._shaka.configure({
       abr: {
@@ -626,7 +626,7 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
     });
   }
 
-  private _getRestrictionShakaConfig(restrictions: PKABRRestrictionObject): any {
+  private _getRestrictionShakaConfig(restrictions: PCABRRestrictionObject): any {
     const getMinDimensions = (dim): number => {
       const videoTracks = this._getVideoTracks();
       return Math.min.apply(
@@ -1096,8 +1096,8 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
    * @returns {Array<TextTrack>} - The parsed text tracks
    * @private
    */
-  private _getParsedTextTracks(): Array<PKTextTrack> {
-    const parsedTracks: PKTextTrack[] = [];
+  private _getParsedTextTracks(): Array<PCTextTrack> {
+    const parsedTracks: PCTextTrack[] = [];
     for (const textTrack of this._shaka.getTextTracks()) {
       let kind = textTrack.kind ? textTrack.kind + 's' : '';
       kind = kind === '' && this._config.useShakaTextTrackDisplay ? 'captions' : kind;
@@ -1109,7 +1109,7 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
         label: textTrack.label as string,
         language: textTrack.language
       };
-      parsedTracks.push(new PKTextTrack(settings));
+      parsedTracks.push(new PCTextTrack(settings));
     }
     return parsedTracks;
   }
@@ -1178,8 +1178,8 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
    * @returns {void}
    * @public
    */
-  public selectTextTrack(textTrack: PKTextTrack): void {
-    if (this._shaka && textTrack instanceof PKTextTrack && !textTrack.active && (textTrack.kind === 'subtitles' || textTrack.kind === 'captions')) {
+  public selectTextTrack(textTrack: PCTextTrack): void {
+    if (this._shaka && textTrack instanceof PCTextTrack && !textTrack.active && (textTrack.kind === 'subtitles' || textTrack.kind === 'captions')) {
       this._shaka.setTextTrackVisibility(this._config.textTrackVisibile);
       this._shaka.selectTextLanguage(textTrack.language);
       this._onTrackChanged(textTrack);
@@ -1235,11 +1235,11 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
   /**
    * Apply ABR restriction.
    * @function applyABRRestriction
-   * @param {PKABRRestrictionObject} restrictions - abr restrictions config
+   * @param {PCABRRestrictionObject} restrictions - abr restrictions config
    * @returns {void}
    * @public
    */
-  public applyABRRestriction(restrictions: PKABRRestrictionObject): void {
+  public applyABRRestriction(restrictions: PCABRRestrictionObject): void {
     Utils.Object.createPropertyPath(this._config, 'abr.restrictions', restrictions);
     this._maybeApplyAbrRestrictions();
     if (!this.isAdaptiveBitrateEnabled()) {
@@ -1434,7 +1434,7 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
     const {detail, type} = event;
     let metadataTrack = Array.from<TextTrack>(this._videoElement.textTracks).find(track => track.label === type);
     if (!metadataTrack) {
-      metadataTrack = this._videoElement.addTextTrack(PKTextTrack.KIND.METADATA, type);
+      metadataTrack = this._videoElement.addTextTrack(PCTextTrack.KIND.METADATA, type);
     }
     const {startTime, endTime, id, ...metadata} = detail;
 
@@ -1500,13 +1500,13 @@ export default class DashAdapter extends BaseMediaSourceAdapter {
     return targetBufferVal;
   }
 
-  public getDrmInfo(): PKDrmDataObject | null {
+  public getDrmInfo(): PCDrmDataObject | null {
     const drmInfo = this._shaka.drmInfo();
     if (!drmInfo) {
       return null;
     } else {
       const {licenseServerUri, keySystem, serverCertificateUri} = drmInfo;
-      const drmDataObject: PKDrmDataObject = {
+      const drmDataObject: PCDrmDataObject = {
         licenseUrl: licenseServerUri,
         scheme: keySystem
       };

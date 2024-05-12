@@ -1,13 +1,13 @@
-# PlayKit JS DASH - [Shaka Player] Adapter for the [PlayKit JS Player]
+# PlayChi JS DASH - [Shaka Player] Adapter for the [PlayChi JS Player]
 
-[![Build Status](https://github.com/kaltura/playkit-js-dash/actions/workflows/run_canary_full_flow.yaml/badge.svg)](https://github.com/kaltura/playkit-js-dash/actions/workflows/run_canary_full_flow.yaml)
+[![Build Status](https://github.com/tasvirchi/playchi-js-dash/actions/workflows/run_canary_full_flow.yaml/badge.svg)](https://github.com/tasvirchi/playchi-js-dash/actions/workflows/run_canary_full_flow.yaml)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![](https://img.shields.io/npm/v/@playkit-js/playkit-js-dash/latest.svg)](https://www.npmjs.com/package/@playkit-js/playkit-js-dash)
-[![](https://img.shields.io/npm/v/@playkit-js/playkit-js-dash/canary.svg)](https://www.npmjs.com/package/@playkit-js/playkit-js-dash/v/canary)
+[![](https://img.shields.io/npm/v/@playchi-js/playchi-js-dash/latest.svg)](https://www.npmjs.com/package/@playchi-js/playchi-js-dash)
+[![](https://img.shields.io/npm/v/@playchi-js/playchi-js-dash/canary.svg)](https://www.npmjs.com/package/@playchi-js/playchi-js-dash/v/canary)
 
-PlayKit JS DASH adapter integrates [Shaka Player] with the [PlayKit JS Player].
+PlayChi JS DASH adapter integrates [Shaka Player] with the [PlayChi JS Player].
 
-PlayKit JS DASH is written in [ECMAScript6], statically analysed using [Flow] and transpiled in ECMAScript5 using [Babel].
+PlayChi JS DASH is written in [ECMAScript6], statically analysed using [Flow] and transpiled in ECMAScript5 using [Babel].
 
 [shaka player]: https://github.com/google/shaka-player
 [shaka player api docs]: https://shaka-player-demo.appspot.com/docs/api/index.html
@@ -19,11 +19,11 @@ PlayKit JS DASH is written in [ECMAScript6], statically analysed using [Flow] an
 
 ### Prerequisites
 
-The adapter requires [PlayKit JS Player] to be loaded first.
+The adapter requires [PlayChi JS Player] to be loaded first.
 
 The adapter uses the [Shaka Player] javascript library.
 
-[playkit js player]: https://github.com/kaltura/playkit-js
+[playchi js player]: https://github.com/tasvirchi/playchi-js
 
 ### Installing
 
@@ -32,8 +32,8 @@ First, clone and run [yarn] to install dependencies:
 [yarn]: https://yarnpkg.com/lang/en/
 
 ```
-git clone https://github.com/kaltura/playkit-js-dash.git
-cd playkit-js-dash
+git clone https://github.com/tasvirchi/playchi-js-dash.git
+cd playchi-js-dash
 yarn install
 ```
 
@@ -50,13 +50,13 @@ yarn run build
 Finally, add the bundle as a script tag in your page, and initialize the player
 
 ```html
-<script type="text/javascript" src="/PATH/TO/FILE/playkit.js"></script>
-<script type="text/javascript" src="/PATH/TO/FILE/playkit-dash.js"></script>
+<script type="text/javascript" src="/PATH/TO/FILE/playchi.js"></script>
+<script type="text/javascript" src="/PATH/TO/FILE/playchi-dash.js"></script>
 <div id="player-placeholder" style="height:360px; width:640px">
   <script type="text/javascript">
     var playerContainer = document.querySelector("#player-placeholder");
     var config = {...};
-    var player = playkit.core.loadPlayer(config);
+    var player = playchi.core.loadPlayer(config);
     playerContainer.appendChild(player.getView());
     player.play();
   </script>
@@ -65,7 +65,7 @@ Finally, add the bundle as a script tag in your page, and initialize the player
 
 ## Configuration
 
-[Shaka Player] configuration options, documented @[Shaka Player API docs], can be passed via the [PlayKit JS Player] config.
+[Shaka Player] configuration options, documented @[Shaka Player API docs], can be passed via the [PlayChi JS Player] config.
 
 The configuration is exposed via the playback section:
 
@@ -119,7 +119,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/kaltura/playkit-js-dash/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/tasvirchi/playchi-js-dash/tags).
 
 ## License
 

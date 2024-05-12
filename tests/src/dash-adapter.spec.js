@@ -1,18 +1,18 @@
 import DashAdapter from '../../src';
 import * as TestUtils from './utils/test-utils';
-import {loadPlayer, VideoTrack, AudioTrack, TextTrack, Utils, RequestType, EventType, Error, createTimedMetadata} from '@playkit-js/playkit-js';
+import {loadPlayer, VideoTrack, AudioTrack, TextTrack, Utils, RequestType, EventType, Error, createTimedMetadata} from '@playchi-js/playchi-js';
 import {Widevine} from '../../src/drm/widevine';
 import {PlayReady} from '../../src/drm/playready';
 import {wwDrmData, prDrmData} from './drm/fake-drm-data';
 import shaka from 'shaka-player';
-import {ImageTrack, ThumbnailInfo} from '@playkit-js/playkit-js';
+import {ImageTrack, ThumbnailInfo} from '@playchi-js/playchi-js';
 
 const targetId = 'player-placeholder_dash-adapter.spec';
 
 const vodSource = {
   mimetype: 'application/dash+xml',
   url:
-    'https://cfvod.kaltura.com/dasha/p/1740481/sp/174048100/serveFlavor/entryId/1_ez6mf1n8/v/,1/ev/3/flavorId/1_fwvuvqym,1/ev/3/flavorId/1_5zyuykzo,1/ev/3/flavorId/1_4xul4cg0,1/ev/3/flavorId/1_5jovgwnt,1/ev/3/flavorId/1_dt7bjb0q,2/ev/3/flavorId/0_og64h1z3,2/ev/3/flavorId/0_mgociiko,2/ev/3/flavorId/0_dxxbalt0,/forceproxy/true/name/a.mp4.urlset/manifest.mpd'
+    'https://cfvod.tasvirchi.com/dasha/p/1740481/sp/174048100/serveFlavor/entryId/1_ez6mf1n8/v/,1/ev/3/flavorId/1_fwvuvqym,1/ev/3/flavorId/1_5zyuykzo,1/ev/3/flavorId/1_4xul4cg0,1/ev/3/flavorId/1_5jovgwnt,1/ev/3/flavorId/1_dt7bjb0q,2/ev/3/flavorId/0_og64h1z3,2/ev/3/flavorId/0_mgociiko,2/ev/3/flavorId/0_dxxbalt0,/forceproxy/true/name/a.mp4.urlset/manifest.mpd'
 };
 
 const liveSource = {
@@ -22,7 +22,7 @@ const liveSource = {
 
 const dvrSource = {
   mimetype: 'application/dash+xml',
-  url: 'http://klive-a.akamaihd.net/dc-1/live/dash/p/1897241/e/1_gffgxm38/t/e83cor13pmTGTQ7kPZiopg/manifest.mpd'
+  url: 'http://tlive-a.akamaihd.net/dc-1/live/dash/p/1897241/e/1_gffgxm38/t/e83cor13pmTGTQ7kPZiopg/manifest.mpd'
 };
 
 const vodInStreamThumbnailSource = {

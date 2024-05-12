@@ -1,5 +1,5 @@
 import {Widevine} from '../../../src/drm/widevine';
-import {DrmScheme, Env} from '@playkit-js/playkit-js';
+import {DrmScheme, Env} from '@playchi-js/playchi-js';
 import {wwDrmData, prDrmData} from './fake-drm-data';
 
 const BROWSER = Env.browser.name;

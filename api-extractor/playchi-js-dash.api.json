@@ -161,20 +161,20 @@
     }
   },
   "kind": "Package",
-  "canonicalReference": "@playkit-js/playkit-js-dash!",
+  "canonicalReference": "@playchi-js/playchi-js-dash!",
   "docComment": "",
-  "name": "@playkit-js/playkit-js-dash",
+  "name": "@playchi-js/playchi-js-dash",
   "preserveMemberOrder": false,
   "members": [
     {
       "kind": "EntryPoint",
-      "canonicalReference": "@playkit-js/playkit-js-dash!",
+      "canonicalReference": "@playchi-js/playchi-js-dash!",
       "name": "",
       "preserveMemberOrder": false,
       "members": [
         {
           "kind": "Class",
-          "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter:class",
+          "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter:class",
           "docComment": "/**\n * Adapter of shaka lib for dash content  @classdesc\n */\n",
           "excerptTokens": [
             {
@@ -184,7 +184,7 @@
             {
               "kind": "Reference",
               "text": "BaseMediaSourceAdapter",
-              "canonicalReference": "@playkit-js/playkit-js!BaseMediaSourceAdapter:class"
+              "canonicalReference": "@playchi-js/playchi-js!BaseMediaSourceAdapter:class"
             },
             {
               "kind": "Content",
@@ -199,7 +199,7 @@
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#_getLiveEdge:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#_getLiveEdge:member(1)",
               "docComment": "/**\n * Returns the live edge\n *\n * @returns {number} - live edge  @private\n */\n",
               "excerptTokens": [
                 {
@@ -230,7 +230,7 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter._logger:member",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter._logger:member",
               "docComment": "/**\n * The adapter logger  @member {any} _logger  @private  @static\n */\n",
               "excerptTokens": [
                 {
@@ -265,7 +265,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#_removeMediaKeys:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#_removeMediaKeys:member(1)",
               "docComment": "/**\n * Remove mediaKeys from the video element. mediaKeys are set if an encrypted media was previously played, and must be removed before a new encrypted media can be played. If mediaKeys are not null it means that shaka reset wasn't called or that it failed to remove them.\n *\n * @returns {Promise<void>} Promise that resolves when the operation finishes.\n */\n",
               "excerptTokens": [
                 {
@@ -301,7 +301,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#_switchFromDynamicToStatic:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#_switchFromDynamicToStatic:member(1)",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -337,7 +337,7 @@
             },
             {
               "kind": "Constructor",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter:constructor(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter:constructor(1)",
               "docComment": "/**\n * @constructor Constructs a new instance of the `DashAdapter` class\n *\n * @param videoElement - The video element which bind to the dash adapter\n *\n * @param source - The source object\n *\n * @param config - The media source adapter configuration\n */\n",
               "excerptTokens": [
                 {
@@ -355,8 +355,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "PKMediaSourceObject",
-                  "canonicalReference": "@playkit-js/playkit-js!PKMediaSourceObject:type"
+                  "text": "PCMediaSourceObject",
+                  "canonicalReference": "@playchi-js/playchi-js!PCMediaSourceObject:type"
                 },
                 {
                   "kind": "Content",
@@ -403,7 +403,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#applyABRRestriction:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#applyABRRestriction:member(1)",
               "docComment": "/**\n * Apply ABR restriction.  @function applyABRRestriction\n *\n * @param restrictions - abr restrictions config\n *\n * @returns {void}\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -412,8 +412,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "PKABRRestrictionObject",
-                  "canonicalReference": "@playkit-js/playkit-js!PKABRRestrictionObject:type"
+                  "text": "PCABRRestrictionObject",
+                  "canonicalReference": "@playchi-js/playchi-js!PCABRRestrictionObject:type"
                 },
                 {
                   "kind": "Content",
@@ -452,7 +452,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#attachMediaSource:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#attachMediaSource:member(1)",
               "docComment": "/**\n * attach media - return the media source to handle the video tag\n *\n * @returns {void}\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -483,7 +483,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter.canPlayDrm:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter.canPlayDrm:member(1)",
               "docComment": "/**\n * Checks if dash adapter can play a given drm data.\n *\n * @param drmData - The drm data to check.\n *\n * @param drmConfig - The drm config.\n *\n * @returns {boolean} - Whether the dash adapter can play a specific drm data.  @static\n */\n",
               "excerptTokens": [
                 {
@@ -501,8 +501,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "PKDrmDataObject",
-                  "canonicalReference": "@playkit-js/playkit-js!PKDrmDataObject:type"
+                  "text": "PCDrmDataObject",
+                  "canonicalReference": "@playchi-js/playchi-js!PCDrmDataObject:type"
                 },
                 {
                   "kind": "Content",
@@ -514,8 +514,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "PKDrmConfigObject",
-                  "canonicalReference": "@playkit-js/playkit-js!PKDrmConfigObject:type"
+                  "text": "PCDrmConfigObject",
+                  "canonicalReference": "@playchi-js/playchi-js!PCDrmConfigObject:type"
                 },
                 {
                   "kind": "Content",
@@ -562,7 +562,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter.canPlayType:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter.canPlayType:member(1)",
               "docComment": "/**\n * Checks if dash adapter can play a given mime type  @function canPlayType\n *\n * @param mimeType - The mime type to check\n *\n * @returns {boolean} - Whether the dash adapter can play a specific mime type  @static\n */\n",
               "excerptTokens": [
                 {
@@ -610,7 +610,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter.createAdapter:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter.createAdapter:member(1)",
               "docComment": "/**\n * Factory method to create media source adapter.  @function createAdapter\n *\n * @param videoElement - The video element that the media source adapter work with.\n *\n * @param source - The source Object.\n *\n * @param config - The player configuration.\n *\n * @returns {IMediaSourceAdapter} - New instance of the run time media source adapter.  @static\n */\n",
               "excerptTokens": [
                 {
@@ -628,8 +628,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "PKMediaSourceObject",
-                  "canonicalReference": "@playkit-js/playkit-js!PKMediaSourceObject:type"
+                  "text": "PCMediaSourceObject",
+                  "canonicalReference": "@playchi-js/playchi-js!PCMediaSourceObject:type"
                 },
                 {
                   "kind": "Content",
@@ -646,7 +646,7 @@
                 {
                   "kind": "Reference",
                   "text": "IMediaSourceAdapter",
-                  "canonicalReference": "@playkit-js/playkit-js!IMediaSourceAdapter:interface"
+                  "canonicalReference": "@playchi-js/playchi-js!IMediaSourceAdapter:interface"
                 },
                 {
                   "kind": "Content",
@@ -693,7 +693,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#destroy:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#destroy:member(1)",
               "docComment": "/**\n * Destroys the dash adapter  @function destroy\n *\n * @returns {Promise<*>} - The destroy promise.\n *\n * @override\n */\n",
               "excerptTokens": [
                 {
@@ -729,7 +729,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#detachMediaSource:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#detachMediaSource:member(1)",
               "docComment": "/**\n * detach media - will remove the media source from handling the video\n *\n * @returns {Promise<void>} - detach promise\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -765,7 +765,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#enableAdaptiveBitrate:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#enableAdaptiveBitrate:member(1)",
               "docComment": "/**\n * Enables adaptive bitrate switching  @function enableAdaptiveBitrate\n *\n * @returns {void}\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -796,7 +796,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#getDrmInfo:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#getDrmInfo:member(1)",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -805,8 +805,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "PKDrmDataObject",
-                  "canonicalReference": "@playkit-js/playkit-js!PKDrmDataObject:type"
+                  "text": "PCDrmDataObject",
+                  "canonicalReference": "@playchi-js/playchi-js!PCDrmDataObject:type"
                 },
                 {
                   "kind": "Content",
@@ -832,7 +832,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#getSegmentDuration:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#getSegmentDuration:member(1)",
               "docComment": "/**\n * Gets the live duration  @return {number} - live duration\n */\n",
               "excerptTokens": [
                 {
@@ -863,7 +863,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#getStartTimeOfDvrWindow:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#getStartTimeOfDvrWindow:member(1)",
               "docComment": "/**\n * Get the start time of DVR window in live playback in seconds.\n *\n * @returns {Number} - start time of DVR window.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -894,7 +894,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#getThumbnail:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#getThumbnail:member(1)",
               "docComment": "/**\n * Returns in-stream thumbnail for a chosen time.\n *\n * @param time - playback time.\n *\n * @return {?ThumbnailInfo} - Thumbnail info\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -912,7 +912,7 @@
                 {
                   "kind": "Reference",
                   "text": "ThumbnailInfo",
-                  "canonicalReference": "@playkit-js/playkit-js!ThumbnailInfo:class"
+                  "canonicalReference": "@playchi-js/playchi-js!ThumbnailInfo:class"
                 },
                 {
                   "kind": "Content",
@@ -947,7 +947,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#hideTextTrack:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#hideTextTrack:member(1)",
               "docComment": "/**\n * Hide the text track  @function hideTextTrack\n *\n * @returns {void}\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -978,7 +978,7 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter.id:member",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter.id:member",
               "docComment": "/**\n * The id of Adapter  @member {string} id  @static\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -1008,7 +1008,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#isAdaptiveBitrateEnabled:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#isAdaptiveBitrateEnabled:member(1)",
               "docComment": "/**\n * Checking if adaptive bitrate switching is enabled.  @function isAdaptiveBitrateEnabled\n *\n * @returns {boolean} - Whether adaptive bitrate is enabled.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -1039,7 +1039,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#isLive:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#isLive:member(1)",
               "docComment": "/**\n * Checking if the current playback is live.  @function isLive\n *\n * @returns {boolean} - Whether playback is live.\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -1070,7 +1070,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter.isSupported:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter.isSupported:member(1)",
               "docComment": "/**\n * Checks if the dash adapter is supported  @function isSupported\n *\n * @returns {boolean} - Whether dash is supported.  @static\n */\n",
               "excerptTokens": [
                 {
@@ -1101,7 +1101,7 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#liveDuration:member",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#liveDuration:member",
               "docComment": "/**\n * Gets the segment duration of the stream  @return {number} - Segment duration in seconds\n */\n",
               "excerptTokens": [
                 {
@@ -1131,7 +1131,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#load:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#load:member(1)",
               "docComment": "/**\n * Load the video source\n *\n * @param startTime - Optional time to start the video from.  @function load\n *\n * @override\n */\n",
               "excerptTokens": [
                 {
@@ -1184,7 +1184,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#seekToLiveEdge:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#seekToLiveEdge:member(1)",
               "docComment": "/**\n * Seeking to live edge.  @function seekToLiveEdge\n *\n * @returns {void}\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -1215,7 +1215,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#selectAudioTrack:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#selectAudioTrack:member(1)",
               "docComment": "/**\n * Select an audio track  @function selectAudioTrack\n *\n * @param audioTrack - the audio track to select\n *\n * @returns {void}\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -1225,7 +1225,7 @@
                 {
                   "kind": "Reference",
                   "text": "AudioTrack",
-                  "canonicalReference": "@playkit-js/playkit-js!AudioTrack:class"
+                  "canonicalReference": "@playchi-js/playchi-js!AudioTrack:class"
                 },
                 {
                   "kind": "Content",
@@ -1264,7 +1264,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#selectImageTrack:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#selectImageTrack:member(1)",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -1274,7 +1274,7 @@
                 {
                   "kind": "Reference",
                   "text": "ImageTrack",
-                  "canonicalReference": "@playkit-js/playkit-js!ImageTrack:class"
+                  "canonicalReference": "@playchi-js/playchi-js!ImageTrack:class"
                 },
                 {
                   "kind": "Content",
@@ -1313,7 +1313,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#selectTextTrack:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#selectTextTrack:member(1)",
               "docComment": "/**\n * Select a text track  @function selectTextTrack\n *\n * @param textTrack - the track to select\n *\n * @returns {void}\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -1322,8 +1322,8 @@
                 },
                 {
                   "kind": "Reference",
-                  "text": "PKTextTrack",
-                  "canonicalReference": "@playkit-js/playkit-js!TextTrack_2:class"
+                  "text": "PCTextTrack",
+                  "canonicalReference": "@playchi-js/playchi-js!TextTrack_2:class"
                 },
                 {
                   "kind": "Content",
@@ -1362,7 +1362,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#selectVideoTrack:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#selectVideoTrack:member(1)",
               "docComment": "/**\n * Select a video track  @function selectVideoTrack\n *\n * @param videoTrack - the video track to select\n *\n * @returns {void}\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
@@ -1372,7 +1372,7 @@
                 {
                   "kind": "Reference",
                   "text": "VideoTrack",
-                  "canonicalReference": "@playkit-js/playkit-js!VideoTrack:class"
+                  "canonicalReference": "@playchi-js/playchi-js!VideoTrack:class"
                 },
                 {
                   "kind": "Content",
@@ -1411,7 +1411,7 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#setMaxBitrate:member(1)",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#setMaxBitrate:member(1)",
               "docComment": "/**\n * set 'bitrate' the max bandwidth (if possible)\n *\n * @param bitrate - the max bitrate allowed\n *\n * @returns {void}\n */\n",
               "excerptTokens": [
                 {
@@ -1459,7 +1459,7 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#targetBuffer:member",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#targetBuffer:member",
               "docComment": "/**\n * gets the target buffer of the player\n *\n * @returns {number} - buffer length target in seconds\n */\n",
               "excerptTokens": [
                 {
@@ -1489,7 +1489,7 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "@playkit-js/playkit-js-dash!DashAdapter#VIDEO_ERROR_CODE:member",
+              "canonicalReference": "@playchi-js/playchi-js-dash!DashAdapter#VIDEO_ERROR_CODE:member",
               "docComment": "/**\n * 3016 is the number of the video error at shaka, we already listens to it in the html5 class  @member {number} - VIDEO_ERROR_CODE  @type {number}  @private\n */\n",
               "excerptTokens": [
                 {
@@ -1526,7 +1526,7 @@
         },
         {
           "kind": "Variable",
-          "canonicalReference": "@playkit-js/playkit-js-dash!NAME:var",
+          "canonicalReference": "@playchi-js/playchi-js-dash!NAME:var",
           "docComment": "",
           "excerptTokens": [
             {
@@ -1549,7 +1549,7 @@
         },
         {
           "kind": "Variable",
-          "canonicalReference": "@playkit-js/playkit-js-dash!VERSION:var",
+          "canonicalReference": "@playchi-js/playchi-js-dash!VERSION:var",
           "docComment": "",
           "excerptTokens": [
             {

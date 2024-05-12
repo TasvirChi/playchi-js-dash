@@ -1,27 +1,27 @@
 {
-  "name": "@playkit-js/playkit-js-dash",
+  "name": "@playchi-js/playchi-js-dash",
   "version": "1.37.0",
   "description": "",
   "keywords": [
-    "kaltura",
+    "tasvirchi",
     "dash",
     "shaka-player",
     "mse",
     "player",
-    "playkit-js",
-    "playkit-js-dash",
+    "playchi-js",
+    "playchi-js-dash",
     "html5 player"
   ],
-  "homepage": "https://github.com/kaltura/playkit-js-dash#readme",
+  "homepage": "https://github.com/tasvirchi/playchi-js-dash#readme",
   "bugs": {
-    "url": "https://github.com/kaltura/playkit-js-dash/issues"
+    "url": "https://github.com/tasvirchi/playchi-js-dash/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kaltura/playkit-js-dash.git"
+    "url": "git+https://github.com/tasvirchi/playchi-js-dash.git"
   },
   "license": "AGPL-3.0",
-  "main": "dist/playkit-dash.js",
+  "main": "dist/playchi-dash.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**/*",
@@ -55,8 +55,8 @@
     "@babel/preset-typescript": "^7.22.15",
     "@babel/runtime": "^7.23.6",
     "@microsoft/api-extractor": "^7.38.0",
-    "@playkit-js/browserslist-config": "1.0.8",
-    "@playkit-js/playkit-js": "canary",
+    "@playchi-js/browserslist-config": "1.0.8",
+    "@playchi-js/playchi-js": "canary",
     "@types/chai": "^4.3.3",
     "@types/mocha": "^9.1.1",
     "@types/sinon": "^10.0.20",
@@ -89,16 +89,16 @@
     "webpack-dev-server": "^4.15.1"
   },
   "peerDependencies": {
-    "@playkit-js/playkit-js": "canary",
+    "@playchi-js/playchi-js": "canary",
     "shaka-player": "4.7.0"
   },
   "browserslist": [
-    "extends @playkit-js/browserslist-config"
+    "extends @playchi-js/browserslist-config"
   ],
   "publishConfig": {
     "access": "public"
   },
   "kcc": {
-    "name": "playkit-dash"
+    "name": "playchi-dash"
   }
 }
